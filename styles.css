@@ -1,2 +1,9 @@
 
 /* Your CSS Code here. */
+:root {
+  --spacing: 20px;
+}
+
+img {
+  padding: var(--spacing);
+}

@@ -10,59 +10,87 @@ body {
     align-items: center;
     background: #193549;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
-.wrapper {
-    display: flex;
+.player {
     width: 765px;
     max-width: 95%;
     position: relative;
+    background: #000;
 }
 
-.flex {
+.viewer {
     display: block;
     width: 100%;
-    height: auto;
+    max-height: 430px;
+    background: #000;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    background: #102a3a;
+}
+
+button {
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #ffc600;
+    color: #193549;
+    font-weight: bold;
+}
+
+.progress {
+    flex: 1;
+    min-width: 80px;
+    height: 10px;
+    background: #555;
+    cursor: pointer;
+}
+
+.progress__filled {
+    width: 0%;
+    height: 100%;
+    background: #ffc600;
+    flex-basis: 0%;
+}
+
+.controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.player__slider {
+    width: 90px;
+    cursor: pointer;
 }
 
 .speed {
-    width: 60px;
-    background: #ffc600;
-    display: flex;
-    align-items: stretch;
+    width: 50px;
+    height: 180px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.3);
     cursor: ns-resize;
 }
 
 .speed-bar {
-    width: 100%;
     height: 25%;
-    background: linear-gradient(
-        to bottom,
-        #ff8a00,
-        #ffc600
-    );
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #ffc600;
     color: #193549;
-    font-size: 16px;
     font-weight: bold;
     pointer-events: none;
-    overflow: hidden;
-}
-
-@media (max-width: 600px) {
-    .wrapper {
-        flex-direction: column;
-    }
-
-    .speed {
-        width: 100%;
-        height: 40px;
-    }
-
-    .speed-bar {
-        width: 25%;
-        height: 100%;
-    }
 }
